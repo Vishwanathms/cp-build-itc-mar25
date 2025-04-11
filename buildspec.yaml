@@ -7,7 +7,7 @@ phases:
   build:
     commands:
       - echo "Zipping application..."
-      - zip -r app.zip ./Build-cp/*
+      - zip -r app.zip ./*
       - echo "Uploading to S3..."
 
 
