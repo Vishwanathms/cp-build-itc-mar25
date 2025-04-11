@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+  build:
+    commands:
+      - echo "Zipping application..."
+      - zip -r app.zip ./Build-cp/*
+      - echo "Uploading to S3..."
+      - aws s3 cp app.zip s3://vishwa23082024/sampleapp-v8.zip
+
+artifacts:
+  files:
+    - sampleapp-v8.zip
+  discard-paths: yes
